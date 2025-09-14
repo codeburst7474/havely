@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RentSpace - Find Your Perfect Stay</title>
+  <style>
+    * {margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif;}
+    body {background: #f5f6fa; color: #2c3e50;}
+
+    /* Navbar */
+    header {
+      background: #2c3e50; color: #fff; padding: 1rem 2rem;
+      display: flex; justify-content: space-between; align-items: center;
+      position: sticky; top: 0; z-index: 10;
+    }
+    header h1 {font-size: 1.5rem;}
+    nav a {color: #fff; margin-left: 1rem; text-decoration: none; font-weight: bold;}
+    nav a:hover {color: #1abc9c;}
+
+    /* Hero */
+    .hero {
+      height: 90vh; display: flex; flex-direction: column; justify-content: center; align-items: center;
+      text-align: center; background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c") no-repeat center/cover;
+      color: #fff; padding: 2rem;
+    }
+    .hero h2 {font-size: 2.5rem; margin-bottom: 1rem;}
+    .hero p {font-size: 1.2rem; margin-bottom: 1.5rem;}
+    .hero input {
+      padding: 0.8rem; width: 280px; max-width: 80%; border-radius: 5px; border: none; margin: 0.5rem;
+    }
+    .hero button {
+      padding: 0.8rem 1.5rem; background: #1abc9c; color: #fff; border: none; border-radius: 5px;
+      cursor: pointer; font-weight: bold;
+    }
+    .hero button:hover {background: #16a085;}
+
+    /* Listings Section */
+    .listings {padding: 3rem 1rem; text-align: center;}
+    .listings h2 {font-size: 2rem; margin-bottom: 1rem;}
+    .cards {display: flex; flex-wrap: wrap; justify-content: center;}
+    .card {
+      background: #fff; width: 260px; margin: 1rem; border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1); overflow: hidden; text-align: left;
+      transition: transform 0.2s ease;
+    }
+    .card:hover {transform: translateY(-5px);}
+    .card img {width: 100%; height: 160px; object-fit: cover;}
+    .card h3 {padding: 0.5rem 1rem;}
+    .card p {padding: 0 1rem 1rem; color: #555;}
+    .card button {
+      margin: 0.5rem 1rem 1rem; padding: 0.5rem 1rem;
+      background: #2980b9; color: #fff; border: none; border-radius: 5px; cursor: pointer;
+    }
+    .card button:hover {background: #1f6391;}
+
+    /* Footer */
+    footer {
+      background: #2c3e50; color: #fff; text-align: center;
+      padding: 1.5rem; margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header>
+    <h1>🏠 RentSpace</h1>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#listings">Listings</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h2>Find Your Perfect Stay</h2>
+    <p>Affordable rooms, houses & flats for students and employees</p>
+    <input type="text" id="searchInput" placeholder="Search by city or area...">
+    <button onclick="searchProperty()">Search</button>
+  </section>
+
+  <!-- Featured Listings -->
+  <section class="listings" id="listings">
+    <h2>Featured Rentals</h2>
+    <div class="cards">
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1600573472591-ee6c8c89e8a0" alt="room">
+        <h3>1 BHK near XYZ College</h3>
+        <p>₹6000/month • Furnished • WiFi</p>
+        <button>View Details</button>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1588854337221-4e27b48ff24e" alt="room">
+        <h3>Shared Room near IT Park</h3>
+        <p>₹4000/month • Semi-furnished • AC</p>
+        <button>View Details</button>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1600607689233-65cf3f9bcb94" alt="room">
+        <h3>2 BHK near Downtown</h3>
+        <p>₹9000/month • Furnished • Balcony</p>
+        <button>View Details</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="contact">
+    <p>📧 Contact us: info@rentspace.com | 📞 +91 98765 43210</p>
+    <p>&copy; 2025 RentSpace. All rights reserved.</p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    function searchProperty() {
+      let input = document.getElementById("searchInput").value;
+      if(input.trim() === "") {
+        alert("Please enter a location to search.");
+      } else {
+        alert("Searching for rentals in: " + input);
+      }
+    }
+  </script>
+</body>
+</html>
